@@ -97,12 +97,6 @@
     }
     .card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
 
-    .card-emoji {
-      font-size: 3rem;
-      text-align: center;
-      padding: 28px 24px 16px;
-      background: linear-gradient(135deg, #f0faf0, #e8f5e9);
-    }
     .card-body { padding: 20px 22px 24px; }
     .card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
     .card-body p  { font-size: .92rem; line-height: 1.65; color: #444; }
@@ -276,6 +270,30 @@
     .compare-hint {
       font-size: .82rem; color: var(--muted);
       margin-top: 9px; text-align: center; font-style: italic;
+    }
+
+    /* ── PROPOSAL CARD INSPIRATION IMAGE ── */
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+    .card-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .4s;
+    }
+    .card:hover .card-img-wrap img { transform: scale(1.04); }
+    .card-img-wrap::after {
+      content: '✨ New Look';
+      position: absolute; bottom: 10px; right: 12px;
+      background: rgba(0,0,0,.58);
+      color: #fff;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .07em;
+      padding: 3px 11px; border-radius: 50px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
     }
   </style>
 </head>
@@ -518,7 +536,9 @@
     <div class="grid grid-2">
 
       <div class="card">
-        <div class="card-emoji">🪵</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Natural stone feature wall with warm lighting" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">High Impact</span>
           <h3>Feature Wall with Natural Stone</h3>
@@ -527,7 +547,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">💡</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&q=80" alt="Living room with layered smart ambient lighting" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Smart Home</span>
           <h3>Layered Smart Lighting System</h3>
@@ -536,7 +558,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🪞</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Floor-to-ceiling built-in shelving with accent back panel" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-purple">Space Illusion</span>
           <h3>Built-in Floor-to-Ceiling Shelving</h3>
@@ -545,16 +569,20 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🪟</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80" alt="Wide-plank engineered oak hardwood flooring in modern living room" loading="lazy">
+        </div>
         <div class="card-body">
-          <span class="badge badge-orange">Warmth & Comfort</span>
+          <span class="badge badge-orange">Warmth &amp; Comfort</span>
           <h3>Underfloor Heating + Hardwood Floors</h3>
           <p>Replace carpets with wide-plank engineered oak flooring over electric underfloor heating. Warm underfoot and timeless in look — a significant home value booster.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🎨</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Bold earthy terracotta and sage green colour palette living room" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Refresh</span>
           <h3>Bold Colour Palette Refresh</h3>
@@ -563,7 +591,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">📺</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=80" alt="Concealed home cinema with 4K screen and Dolby Atmos sound system" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Technology</span>
           <h3>Concealed Home Cinema Setup</h3>
@@ -586,7 +616,9 @@
     <div class="grid grid-2">
 
       <div class="card">
-        <div class="card-emoji">🌳</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Powder-coated aluminium pergola with louvred retractable roof and outdoor heaters" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Outdoor Living</span>
           <h3>Pergola with Retractable Roof</h3>
@@ -595,7 +627,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🌊</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="Compact plunge pool and hot tub surrounded by composite decking and privacy hedging" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Luxury</span>
           <h3>Plunge Pool or Hot Tub Feature</h3>
@@ -604,25 +638,31 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🌿</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Tiered cedar raised vegetable and herb garden beds with composting station" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Sustainability</span>
-          <h3>Raised Vegetable & Herb Garden</h3>
+          <h3>Raised Vegetable &amp; Herb Garden</h3>
           <p>Build tiered cedar raised beds for growing vegetables, herbs, and edible flowers. Add a composting station and rainwater harvesting barrel for a fully sustainable food garden.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🔥</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=600&q=80" alt="Outdoor kitchen with built-in BBQ, pizza oven and sunken fire pit lounge" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-orange">Entertaining</span>
-          <h3>Outdoor Kitchen & Fire Pit Zone</h3>
+          <h3>Outdoor Kitchen &amp; Fire Pit Zone</h3>
           <p>Create a dedicated outdoor kitchen with a built-in BBQ, pizza oven, prep sink, and mini fridge. Pair with a sunken fire pit lounge area framed by ornamental grasses.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">💧</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=600&q=80" alt="Japanese-style Zen garden with koi pond, bamboo water feature and stepping stones" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Zen</span>
           <h3>Japanese-Style Water Feature Garden</h3>
@@ -631,7 +671,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🌸</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1557429287-b2e26467fc2b?w=600&q=80" alt="Four-season planting scheme with lavender, hellebores, autumn grasses and summer blooms" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-purple">Kerb Appeal</span>
           <h3>Four-Season Planting Scheme</h3>
@@ -654,7 +696,9 @@
     <div class="grid grid-2">
 
       <div class="card">
-        <div class="card-emoji">🛁</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Sculptural freestanding stone resin bath beside floor-to-ceiling frosted glass window" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Luxury</span>
           <h3>Freestanding Stone Resin Bath</h3>
@@ -663,7 +707,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🚿</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1620626011761-996317702149?w=600&q=80" alt="Frameless glass wet room with rainfall shower head and linear drain" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">High Impact</span>
           <h3>Walk-In Wet Room with Rainfall Shower</h3>
@@ -672,38 +718,46 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🪨</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Book-matched marble walls with fluted stone vanity and brushed brass fittings" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-orange">Materials</span>
-          <h3>Fluted Marble & Brass Finishes</h3>
+          <h3>Fluted Marble &amp; Brass Finishes</h3>
           <p>Clad walls in book-matched marble or large-format terrazzo tiles. Choose fluted stone for the vanity unit and add brushed brass taps, towel rails, and accessories for a timeless finish.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">💆</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=600&q=80" alt="Steam shower enclosure with in-floor heating and programmable heated towel ladder" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-purple">Wellness</span>
-          <h3>Steam Shower & Heated Towel System</h3>
+          <h3>Steam Shower &amp; Heated Towel System</h3>
           <p>Add a steam generator to your shower enclosure, paired with in-floor heating and a programmable heated towel ladder. Finish with aromatherapy diffusers and Bluetooth ceiling speakers.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🪞</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1568822617270-2c1099f0d1b6?w=600&q=80" alt="Backlit LED anti-fog smart mirror with floating smoked oak double vanity" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Smart</span>
-          <h3>Smart Mirror & Vanity Lighting</h3>
+          <h3>Smart Mirror &amp; Vanity Lighting</h3>
           <p>Install a backlit LED anti-fog smart mirror with touch controls, built-in Bluetooth speaker, and colour temperature adjustment. Pair with a floating double vanity in smoked oak.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🌱</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1524555306-af0b2e6ece9e?w=600&q=80" alt="Vertical living moss and fern wall panel with skylight for natural ventilation" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Biophilic</span>
-          <h3>Living Plant Wall & Natural Ventilation</h3>
-          <p>Install a vertical living moss or fern wall panel above the bath or beside the vanity. Pair with a skylightfor natural ventilation and a connection to the natural world.</p>
+          <h3>Living Plant Wall &amp; Natural Ventilation</h3>
+          <p>Install a vertical living moss or fern wall panel above the bath or beside the vanity. Pair with a skylight for natural ventilation and a connection to the natural world.</p>
         </div>
       </div>
 
@@ -722,7 +776,9 @@
     <div class="grid grid-2">
 
       <div class="card">
-        <div class="card-emoji">🍽️</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Large central kitchen island with Calacatta marble waterfall edge worktop and bar stools" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-orange">Open Plan</span>
           <h3>Kitchen Island with Waterfall Worktop</h3>
@@ -731,7 +787,9 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🏺</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556785702-ae8dd5e6e32c?w=600&q=80" alt="Floor-to-ceiling handleless two-tone kitchen cabinetry with pull-out larder units" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Storage</span>
           <h3>Full-Height Handleless Cabinetry</h3>
@@ -740,25 +798,31 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">👨‍🍳</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909045-f129b1214b27?w=600&q=80" alt="Dual-fuel professional range cooker with bespoke copper extractor hood above the hob" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Chef Quality</span>
-          <h3>Professional Range Cooker & Ventilation</h3>
+          <h3>Professional Range Cooker &amp; Ventilation</h3>
           <p>Upgrade to a dual-fuel or induction range cooker (e.g. ILVE, Falcon, or La Cornue) with a bespoke copper or stainless steel extractor hood as a showpiece above the hob.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🔆</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=80" alt="Slim aluminium bifold doors dissolving kitchen-garden boundary with glass roof lantern" loading="lazy">
+        </div>
         <div class="card-body">
-          <span class="badge badge-purple">Light & Space</span>
+          <span class="badge badge-purple">Light &amp; Space</span>
           <h3>Bifold Doors to Garden + Skylight</h3>
           <p>Open up the rear wall with slim aluminium bifold or sliding doors that dissolve the boundary between kitchen and garden. Add a glass roof lantern or skylight to flood the space with light.</p>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-emoji">🤖</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909048-f03a47a1b0fc?w=600&q=80" alt="Fully integrated smart kitchen appliances behind matching cabinet fronts connected to smart home hub" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-blue">Smart Home</span>
           <h3>Integrated Smart Appliances Hub</h3>
@@ -767,10 +831,12 @@
       </div>
 
       <div class="card">
-        <div class="card-emoji">🌊</div>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=80" alt="Dramatic bookmatched marble splashback with oversized sculptural pendant lights above the island" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="badge badge-green">Detail</span>
-          <h3>Statement Splashback & Pendant Lighting</h3>
+          <h3>Statement Splashback &amp; Pendant Lighting</h3>
           <p>Use a single slab of bookmatched marble, hand-painted Zellige tiles, or fluted glass as a dramatic splashback. Hang oversized sculptural pendants above the island for warmth and drama.</p>
         </div>
       </div>
