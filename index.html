@@ -161,6 +161,38 @@
     .tips-box ul { padding-left: 20px; }
     .tips-box li { font-size: .91rem; line-height: 1.7; color: #555; }
 
+    /* ── PHOTO GALLERY ── */
+    .gallery-group { margin-bottom: 44px; }
+    .gallery-group h3 {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--primary); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .photo-grid figure {
+      margin: 0; border-radius: 12px; overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .photo-grid figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+    }
+    .photo-grid img {
+      width: 100%; height: 200px;
+      object-fit: cover; display: block;
+    }
+    .photo-grid figcaption {
+      padding: 10px 14px;
+      font-size: .85rem; color: var(--muted);
+      border-top: 1px solid #f0f0f0;
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center; padding: 30px;
@@ -179,6 +211,7 @@
 
 <!-- ═══════════════ NAVIGATION ═══════════════ -->
 <nav>
+  <a href="#photos">📷 Current State</a>
   <a href="#living">🛋️ Living Room</a>
   <a href="#garden">🌿 Garden</a>
   <a href="#bathroom">🚿 Bathroom</a>
@@ -189,6 +222,128 @@
 
 <!-- ═══════════════ MAIN ═══════════════ -->
 <main>
+
+  <!-- ══ CURRENT STATE — BEFORE PHOTOS ══ -->
+  <section class="section" id="photos">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef9ec;">📷</div>
+      <div>
+        <h2>Current State — Before Photos</h2>
+        <p>A record of the property as it stands today, room by room.</p>
+      </div>
+    </div>
+
+    <!-- Exterior & Entrance -->
+    <div class="gallery-group">
+      <h3>🏠 Exterior &amp; Entrance</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="1098085857.JPG" alt="Property exterior" loading="lazy">
+          <figcaption>Property — exterior view</figcaption>
+        </figure>
+        <figure>
+          <img src="entrance_road.JPG" alt="Entrance road" loading="lazy">
+          <figcaption>Entrance road</figcaption>
+        </figure>
+        <figure>
+          <img src="entrance_lobby.JPG" alt="Entrance lobby" loading="lazy">
+          <figcaption>Entrance lobby / hall</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Living Room -->
+    <div class="gallery-group">
+      <h3>🛋️ Living Room</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="living_room.JPG" alt="Living room" loading="lazy">
+          <figcaption>Living room</figcaption>
+        </figure>
+        <figure>
+          <img src="living_room_2.JPG" alt="Living room — angle 2" loading="lazy">
+          <figcaption>Living room — angle 2</figcaption>
+        </figure>
+        <figure>
+          <img src="living_room_3.JPG" alt="Living room — angle 3" loading="lazy">
+          <figcaption>Living room — angle 3</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Kitchen -->
+    <div class="gallery-group">
+      <h3>🍳 Kitchen</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="kitchen.JPG" alt="Kitchen" loading="lazy">
+          <figcaption>Kitchen</figcaption>
+        </figure>
+        <figure>
+          <img src="kitchen_2.JPG" alt="Kitchen — angle 2" loading="lazy">
+          <figcaption>Kitchen — angle 2</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Bathroom -->
+    <div class="gallery-group">
+      <h3>🚿 Bathroom</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="bathroom_1.JPG" alt="Bathroom" loading="lazy">
+          <figcaption>Bathroom</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Bedrooms -->
+    <div class="gallery-group">
+      <h3>🛏️ Bedrooms</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="bedroom_1.JPG" alt="Bedroom 1" loading="lazy">
+          <figcaption>Bedroom 1</figcaption>
+        </figure>
+        <figure>
+          <img src="bedroom_2.JPG" alt="Bedroom 2" loading="lazy">
+          <figcaption>Bedroom 2</figcaption>
+        </figure>
+        <figure>
+          <img src="bedroom_3.JPG" alt="Bedroom 3" loading="lazy">
+          <figcaption>Bedroom 3</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Garden & Terrace -->
+    <div class="gallery-group">
+      <h3>🌿 Garden &amp; Terrace</h3>
+      <div class="photo-grid">
+        <figure>
+          <img src="garden.JPG" alt="Garden" loading="lazy">
+          <figcaption>Garden</figcaption>
+        </figure>
+        <figure>
+          <img src="garden_2.JPG" alt="Garden — angle 2" loading="lazy">
+          <figcaption>Garden — angle 2</figcaption>
+        </figure>
+        <figure>
+          <img src="garden_3.JPG" alt="Garden — angle 3" loading="lazy">
+          <figcaption>Garden — angle 3</figcaption>
+        </figure>
+        <figure>
+          <img src="garden_4.JPG" alt="Garden — angle 4" loading="lazy">
+          <figcaption>Garden — angle 4</figcaption>
+        </figure>
+        <figure>
+          <img src="terrace.JPG" alt="Terrace" loading="lazy">
+          <figcaption>South-facing terrace</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </section>
 
   <!-- ══ LIVING ROOM ══ -->
   <section class="section" id="living">
