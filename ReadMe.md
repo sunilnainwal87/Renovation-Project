@@ -10,6 +10,8 @@ Source: [Dekrem Vastgoed listing](https://www.dekrem.be/pand-detail/verkoop-woni
 |------|-------------|
 | `property_data.json` | Full property details (address, rooms, energy data, legal obligations) |
 | `renovation_agent.py` | Interactive AI renovation advisor pre-loaded with the property data |
+| `index.html` | Renovation proposals website — includes a current-state photo gallery |
+| `*.JPG` | Current-state (before) photos: exterior, entrance, living room, kitchen, bathroom, bedrooms, garden, terrace |
 
 ## Usage
 
