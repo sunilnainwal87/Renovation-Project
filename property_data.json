@@ -1,0 +1,76 @@
+{
+  "source": "https://www.dekrem.be/pand-detail/verkoop-woning-haacht/7523708",
+  "property": {
+    "address": "Peltheide 11, 3150 Haacht, Belgium",
+    "type": "Detached split-level family home (open bebouwing)",
+    "asking_price_eur": 375000,
+    "plot_area_m2": 626,
+    "year_built": 1968,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "garage": true,
+    "garden_orientation": "South",
+    "cadastral_income_eur": 1130,
+    "flood_risk": "P-score A / G-score A (no flooding risk)"
+  },
+  "rooms": {
+    "basement_crawl_space": [
+      "Accessible from garage (ceiling height ±1.51 m)"
+    ],
+    "ground_floor": [
+      "Garage: automated sectional door, outside door to back garden, shower, laundry hookups, ceramic utility sink, electrical panel, water softener, water meter, oil-fired central heating boiler, access to crawl space, stairs to raised ground floor"
+    ],
+    "raised_ground_floor": [
+      "Entrance hall with stairs to first floor and cloakroom area",
+      "Separate toilet",
+      "Passage/landing with stairs to ground floor",
+      "Kitchen: outside door, ceramic hob, extractor, dishwasher, synthetic sink, built-in cabinets",
+      "Living room: sliding doors to terrace, built-in wood fire cassette in chimney"
+    ],
+    "first_floor": [
+      "Landing",
+      "Bedroom 1",
+      "Bedroom 2",
+      "Bedroom 3",
+      "Bathroom: bathtub, toilet, sink column, fitted cabinets"
+    ],
+    "exterior": [
+      "South-facing elevated terrace",
+      "South-facing garden (626 m² total plot)",
+      "Wooden garden shed"
+    ]
+  },
+  "finishes": {
+    "flooring": ["Ceramic tiles", "Laminate", "Vinyl"],
+    "walls": ["Wallpapered", "Tiled (wet areas)"],
+    "ceilings": ["Wooden panelling", "Painted plaster"],
+    "windows": "Wooden frames with double glazing",
+    "shutters": "PVC roller shutters"
+  },
+  "energy_and_utilities": {
+    "epc_label": "F",
+    "epc_score_kwh_m2_year": 708,
+    "epc_unique_code": "20260209-0003796785-RES-1",
+    "heating": "Oil-fired central heating with convectors",
+    "connections": ["Gas", "Water", "Electricity"],
+    "water_softener": true,
+    "asbestos_issues": false,
+    "electrical_compliance": false
+  },
+  "legal_obligations": {
+    "flemish_renovation_obligation": true,
+    "target_epc_label": "D",
+    "deadline_years_after_purchase": 6,
+    "flemish_renovation_premiums_available": true,
+    "urban_planning": "Living area, no encumbering judicial or administrative measures, valid building and parcel permit",
+    "reference": "https://www.vlaanderen.be/een-huis-of-appartement-kopen/renovatieverplichting-voor-residentiele-gebouwen"
+  },
+  "notable_features": [
+    "Quiet one-way street within walking distance to shops, schools, and public transport",
+    "Very bright south-facing rear facade",
+    "Elevated south-facing terrace and garden",
+    "Split-level layout adds character",
+    "Built-in wood fire cassette in living room",
+    "Garage with utility area (shower, laundry, boiler)"
+  ]
+}
