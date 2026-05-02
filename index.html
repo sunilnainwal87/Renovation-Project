@@ -866,29 +866,29 @@
 </footer>
 <script>
   /* ── Before / After comparison sliders ── */
-  document.querySelectorAll('[data-compare]').forEach(wrap => {
-    const after    = wrap.querySelector('.img-after');
-    const divider  = wrap.querySelector('.compare-divider');
-    let dragging   = false;
+  (function () {
+    let activeWrap = null;
 
-    function setPos(clientX) {
-      const rect = wrap.getBoundingClientRect();
+    function setPos(wrap, clientX) {
+      const after   = wrap.querySelector('.img-after');
+      const divider = wrap.querySelector('.compare-divider');
+      const rect    = wrap.getBoundingClientRect();
       let pct = ((clientX - rect.left) / rect.width) * 100;
       pct = Math.max(2, Math.min(98, pct));
-      after.style.clipPath   = `inset(0 ${100 - pct}% 0 0)`;
-      divider.style.left     = pct + '%';
+      after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      divider.style.left   = pct + '%';
     }
 
-    wrap.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
-    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('mousemove',  e => { if (dragging) setPos(e.clientX); });
-    window.addEventListener('touchmove',  e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('mouseup',   () => dragging = false);
-    window.addEventListener('touchend',  () => dragging = false);
+    document.querySelectorAll('[data-compare]').forEach(wrap => {
+      wrap.addEventListener('mousedown',  e => { activeWrap = wrap; setPos(wrap, e.clientX); });
+      wrap.addEventListener('touchstart', e => { activeWrap = wrap; setPos(wrap, e.touches[0].clientX); }, { passive: true });
+    });
 
-    /* Click anywhere on the strip also works */
-    wrap.addEventListener('click', e => setPos(e.clientX));
-  });
+    window.addEventListener('mousemove',  e => { if (activeWrap) setPos(activeWrap, e.clientX); });
+    window.addEventListener('touchmove',  e => { if (activeWrap) setPos(activeWrap, e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mouseup',   () => { activeWrap = null; });
+    window.addEventListener('touchend',  () => { activeWrap = null; });
+  })();
 
   /* ── Active nav tab highlighting ── */
   const sections = document.querySelectorAll('section[id]');
