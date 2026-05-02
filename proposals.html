@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🏡 Home Renovation Proposals</title>
+  <style>
+    :root {
+      --primary: #2c5f2e;
+      --secondary: #97bc62;
+      --accent: #d4a843;
+      --bg: #f9f6f0;
+      --card-bg: #ffffff;
+      --text: #2d2d2d;
+      --muted: #6b7280;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    header {
+      background: linear-gradient(135deg, #2c5f2e 0%, #4a8c4e 50%, #97bc62 100%);
+      color: white;
+      text-align: center;
+      padding: 70px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    header h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.5px; }
+    header p  { margin-top: 14px; font-size: 1.15rem; opacity: .88; max-width: 600px; margin-inline: auto; }
+
+    /* ── NAV TABS ── */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 28px 24px 0;
+    }
+    nav a {
+      text-decoration: none;
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 10px 26px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: all .25s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ── SECTIONS ── */
+    main { max-width: 1200px; margin: 0 auto; padding: 50px 24px 80px; }
+    .section { margin-bottom: 80px; scroll-margin-top: 20px; }
+    .section-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 32px;
+    }
+    .section-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
+    .section-header p  { color: var(--muted); margin-top: 4px; font-size: .97rem; }
+
+    /* ── CARDS GRID ── */
+    .grid { display: grid; gap: 24px; }
+    .grid-2 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
+
+    .card-emoji {
+      font-size: 3rem;
+      text-align: center;
+      padding: 28px 24px 16px;
+      background: linear-gradient(135deg, #f0faf0, #e8f5e9);
+    }
+    .card-body { padding: 20px 22px 24px; }
+    .card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
+    .card-body p  { font-size: .92rem; line-height: 1.65; color: #444; }
+
+    .badge {
+      display: inline-block;
+      font-size: .75rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .badge-green  { background: #d1fae5; color: #065f46; }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+    .badge-orange { background: #fef3c7; color: #92400e; }
+    .badge-purple { background: #ede9fe; color: #5b21b6; }
+
+    /* ── BUDGET TABLE ── */
+    .budget-table {
+      width: 100%; border-collapse: collapse;
+      background: white; border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .budget-table th {
+      background: var(--primary); color: white;
+      padding: 14px 18px; text-align: left; font-size: .9rem;
+    }
+    .budget-table td { padding: 13px 18px; border-bottom: 1px solid #f0f0f0; font-size: .92rem; }
+    .budget-table tr:last-child td { border-bottom: none; }
+    .budget-table tr:nth-child(even) td { background: #f8faf8; }
+    .cost { font-weight: 700; color: var(--primary); }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+      width: 3px; background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 3px;
+    }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -26px; top: 6px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--accent); border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+    .timeline-item h4 { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .timeline-item p  { font-size: .91rem; color: #555; line-height: 1.5; }
+
+    /* ── TIPS BOX ── */
+    .tips-box {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px; padding: 22px 26px;
+      margin-top: 36px;
+    }
+    .tips-box h4 { color: #92400e; font-size: 1.05rem; margin-bottom: 12px; }
+    .tips-box ul { padding-left: 20px; }
+    .tips-box li { font-size: .91rem; line-height: 1.7; color: #555; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 30px;
+      color: var(--muted); font-size: .88rem;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header>
+  <h1>🏡 Home Renovation Proposals</h1>
+  <p>Curated, high-impact ideas to transform your living spaces — room by room, inside and out.</p>
+</header>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav>
+  <a href="#living">🛋️ Living Room</a>
+  <a href="#garden">🌿 Garden</a>
+  <a href="#bathroom">🚿 Bathroom</a>
+  <a href="#kitchen">🍳 Kitchen</a>
+  <a href="#budget">💰 Budget</a>
+  <a href="#timeline">📅 Timeline</a>
+</nav>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main>
+
+  <!-- ══ LIVING ROOM ══ -->
+  <section class="section" id="living">
+    <div class="section-header">
+      <div class="section-icon" style="background:#e8f5e9;">🛋️</div>
+      <div>
+        <h2>Living Room</h2>
+        <p>Create a warm, stylish, and functional gathering space.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="card-emoji">🪵</div>
+        <div class="card-body">
+          <span class="badge badge-green">High Impact</span>
+          <h3>Feature Wall with Natural Stone</h3>
+          <p>Install a stunning floor-to-ceiling natural stone or textured plaster feature wall behind the sofa or TV unit. Pair with warm LED strip lighting for a luxury hotel feel.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">💡</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Smart Home</span>
+          <h3>Layered Smart Lighting System</h3>
+          <p>Install recessed ceiling lights, dimmable floor lamps, and smart RGB LED strips controlled by voice (Alexa / Google Home). Set mood scenes for movie nights, entertaining, or reading.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🪞</div>
+        <div class="card-body">
+          <span class="badge badge-purple">Space Illusion</span>
+          <h3>Built-in Floor-to-Ceiling Shelving</h3>
+          <p>Bespoke joinery units that maximise vertical space for books, art, and decor. Paint the back panel in a deep accent colour to add depth and character.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🪟</div>
+        <div class="card-body">
+          <span class="badge badge-orange">Warmth & Comfort</span>
+          <h3>Underfloor Heating + Hardwood Floors</h3>
+          <p>Replace carpets with wide-plank engineered oak flooring over electric underfloor heating. Warm underfoot and timeless in look — a significant home value booster.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🎨</div>
+        <div class="card-body">
+          <span class="badge badge-green">Refresh</span>
+          <h3>Bold Colour Palette Refresh</h3>
+          <p>Repaint in trending earthy tones: terracotta, sage green, or deep navy. Coordinate with new soft furnishings — linen curtains, bouclé cushions, and a statement area rug.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">📺</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Technology</span>
+          <h3>Concealed Home Cinema Setup</h3>
+          <p>Install a 4K QLED TV with a motorised flush panel that hides it when not in use. Add a Dolby Atmos soundbar system hidden within the joinery for a cinema-quality experience.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ GARDEN ══ -->
+  <section class="section" id="garden">
+    <div class="section-header">
+      <div class="section-icon" style="background:#f0fdf4;">🌿</div>
+      <div>
+        <h2>Garden</h2>
+        <p>Transform your outdoor space into a year-round sanctuary.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="card-emoji">🌳</div>
+        <div class="card-body">
+          <span class="badge badge-green">Outdoor Living</span>
+          <h3>Pergola with Retractable Roof</h3>
+          <p>Build a powder-coated aluminium pergola with a motorised louvred roof. Add outdoor heaters and string lights to create a stunning all-weather entertaining area usable 365 days a year.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🌊</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Luxury</span>
+          <h3>Plunge Pool or Hot Tub Feature</h3>
+          <p>Install a compact plunge pool or an all-season hot tub surrounded by composite decking. Frame with tall privacy hedging and warm outdoor lighting for a private spa retreat.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🌿</div>
+        <div class="card-body">
+          <span class="badge badge-green">Sustainability</span>
+          <h3>Raised Vegetable & Herb Garden</h3>
+          <p>Build tiered cedar raised beds for growing vegetables, herbs, and edible flowers. Add a composting station and rainwater harvesting barrel for a fully sustainable food garden.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🔥</div>
+        <div class="card-body">
+          <span class="badge badge-orange">Entertaining</span>
+          <h3>Outdoor Kitchen & Fire Pit Zone</h3>
+          <p>Create a dedicated outdoor kitchen with a built-in BBQ, pizza oven, prep sink, and mini fridge. Pair with a sunken fire pit lounge area framed by ornamental grasses.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">💧</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Zen</span>
+          <h3>Japanese-Style Water Feature Garden</h3>
+          <p>Design a Zen garden zone with a koi pond or bamboo water feature, moss ground cover, stepping stones, and a meditation bench. Peaceful and low maintenance.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🌸</div>
+        <div class="card-body">
+          <span class="badge badge-purple">Kerb Appeal</span>
+          <h3>Four-Season Planting Scheme</h3>
+          <p>Work with a landscape designer on a curated planting plan ensuring colour, texture and fragrance in every season — from winter hellebores to summer lavender and autumn grasses.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ BATHROOM ══ -->
+  <section class="section" id="bathroom">
+    <div class="section-header">
+      <div class="section-icon" style="background:#eff6ff;">🚿</div>
+      <div>
+        <h2>Bathroom</h2>
+        <p>Design a spa-like sanctuary that starts and ends your day right.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="card-emoji">🛁</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Luxury</span>
+          <h3>Freestanding Stone Resin Bath</h3>
+          <p>Centre a sculptural freestanding bath in a warm stone resin or matte white finish. Position beside a floor-to-ceiling window with frosted glass for natural light and total privacy.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🚿</div>
+        <div class="card-body">
+          <span class="badge badge-green">High Impact</span>
+          <h3>Walk-In Wet Room with Rainfall Shower</h3>
+          <p>Convert to a frameless glass wet room with a large format porcelain tile floor, linear drain, and an oversized ceiling rainfall head plus a handheld body jet system.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🪨</div>
+        <div class="card-body">
+          <span class="badge badge-orange">Materials</span>
+          <h3>Fluted Marble & Brass Finishes</h3>
+          <p>Clad walls in book-matched marble or large-format terrazzo tiles. Choose fluted stone for the vanity unit and add brushed brass taps, towel rails, and accessories for a timeless finish.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">💆</div>
+        <div class="card-body">
+          <span class="badge badge-purple">Wellness</span>
+          <h3>Steam Shower & Heated Towel System</h3>
+          <p>Add a steam generator to your shower enclosure, paired with in-floor heating and a programmable heated towel ladder. Finish with aromatherapy diffusers and Bluetooth ceiling speakers.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🪞</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Smart</span>
+          <h3>Smart Mirror & Vanity Lighting</h3>
+          <p>Install a backlit LED anti-fog smart mirror with touch controls, built-in Bluetooth speaker, and colour temperature adjustment. Pair with a floating double vanity in smoked oak.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🌱</div>
+        <div class="card-body">
+          <span class="badge badge-green">Biophilic</span>
+          <h3>Living Plant Wall & Natural Ventilation</h3>
+          <p>Install a vertical living moss or fern wall panel above the bath or beside the vanity. Pair with a skylightfor natural ventilation and a connection to the natural world.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ KITCHEN ══ -->
+  <section class="section" id="kitchen">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fffbeb;">🍳</div>
+      <div>
+        <h2>Kitchen</h2>
+        <p>The heart of your home — beautiful, functional, and built to last.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="card-emoji">🍽️</div>
+        <div class="card-body">
+          <span class="badge badge-orange">Open Plan</span>
+          <h3>Kitchen Island with Waterfall Worktop</h3>
+          <p>Install a large central island with a thick Calacatta marble or quartz waterfall edge worktop. Incorporate a prep sink, induction hob, and bar stool seating for casual dining.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🏺</div>
+        <div class="card-body">
+          <span class="badge badge-green">Storage</span>
+          <h3>Full-Height Handleless Cabinetry</h3>
+          <p>Replace upper cabinets with floor-to-ceiling handleless units in a two-tone finish (e.g. sage green lowers, white uppers). Include pull-out larder units, deep pan drawers, and hidden appliance garages.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">👨‍🍳</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Chef Quality</span>
+          <h3>Professional Range Cooker & Ventilation</h3>
+          <p>Upgrade to a dual-fuel or induction range cooker (e.g. ILVE, Falcon, or La Cornue) with a bespoke copper or stainless steel extractor hood as a showpiece above the hob.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🔆</div>
+        <div class="card-body">
+          <span class="badge badge-purple">Light & Space</span>
+          <h3>Bifold Doors to Garden + Skylight</h3>
+          <p>Open up the rear wall with slim aluminium bifold or sliding doors that dissolve the boundary between kitchen and garden. Add a glass roof lantern or skylight to flood the space with light.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🤖</div>
+        <div class="card-body">
+          <span class="badge badge-blue">Smart Home</span>
+          <h3>Integrated Smart Appliances Hub</h3>
+          <p>Fully integrate fridge, dishwasher, microwave and coffee machine behind matching cabinet fronts. Connect all appliances to a smart home hub — preheat your oven on the way home from work.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-emoji">🌊</div>
+        <div class="card-body">
+          <span class="badge badge-green">Detail</span>
+          <h3>Statement Splashback & Pendant Lighting</h3>
+          <p>Use a single slab of bookmatched marble, hand-painted Zellige tiles, or fluted glass as a dramatic splashback. Hang oversized sculptural pendants above the island for warmth and drama.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ BUDGET OVERVIEW ══ -->
+  <section class="section" id="budget">
+    <div class="section-header">
+      <div class="section-icon" style="background:#f0fdf4;">💰</div>
+      <div>
+        <h2>Estimated Budget Overview</h2>
+        <p>Indicative costs — adjust based on your location, size, and finish level.</p>
+      </div>
+    </div>
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Proposal</th>
+          <th>Budget Range</th>
+          <th>Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>🛋️ Living Room</td><td>Feature Wall + Smart Lighting</td><td class="cost">£3,000 – £8,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🛋️ Living Room</td><td>Built-in Shelving + Underfloor Heating</td><td class="cost">£5,000 – £15,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🌿 Garden</td><td>Pergola with Retractable Roof</td><td class="cost">£8,000 – £20,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🌿 Garden</td><td>Outdoor Kitchen + Fire Pit</td><td class="cost">£6,000 – £18,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🚿 Bathroom</td><td>Wet Room + Freestanding Bath</td><td class="cost">£10,000 – £25,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🚿 Bathroom</td><td>Steam Shower + Smart Mirror</td><td class="cost">£4,000 – £10,000</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td>🍳 Kitchen</td><td>Island + Full Cabinetry Refit</td><td class="cost">£20,000 – £50,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>🍳 Kitchen</td><td>Bifold Doors + Skylight</td><td class="cost">£8,000 – £20,000</td><td>⭐⭐⭐⭐⭐</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tips-box">
+      <h4>💡 Budget Tips</h4>
+      <ul>
+        <li>Prioritise structural and plumbing changes first — they're hardest to change later.</li>
+        <li>Phasing work by room can spread costs over 2–3 years without disrupting daily life.</li>
+        <li>Investing in kitchen and bathroom renovations typically returns 60–80% of cost in added property value.</li>
+        <li>Always get 3 contractor quotes and add a 15–20% contingency fund for surprises.</li>
+        <li>Consider energy-efficiency upgrades (insulation, underfloor heating, smart controls) to lower bills long-term.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ TIMELINE ══ -->
+  <section class="section" id="timeline">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fdf4ff;">📅</div>
+      <div>
+        <h2>Suggested Project Timeline</h2>
+        <p>A phased approach to minimise disruption and manage costs.</p>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Phase 1 — Months 1–2: Planning & Design</h4>
+        <p>Hire an architect or interior designer. Obtain planning permission if needed. Finalise drawings, select materials, and secure contractor quotes.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Phase 2 — Months 3–5: Kitchen Renovation</h4>
+        <p>Start with the kitchen as it involves the most trades (plumbing, electrical, joinery). Install bifold doors and skylights during this phase.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Phase 3 — Months 5–7: Bathroom Renovation</h4>
+        <p>Complete wet room, steam shower, and all plumbing upgrades. Tile, fit sanitaryware, and install smart mirror and heated towel rails.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Phase 4 — Months 7–8: Living Room Transformation</h4>
+        <p>Install underfloor heating and hardwood floors. Fit built-in shelving, feature wall, and smart lighting system. Decorate and furnish.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Phase 5 — Months 9–12: Garden & Outdoor Spaces</h4>
+        <p>Build pergola, outdoor kitchen, and plunge pool or hot tub. Landscape, plant four-season scheme, and install outdoor lighting and audio.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Phase 6 — Month 12+: Finishing & Styling</h4>
+        <p>Final snagging, professional cleaning, interior styling, landscaping touch-ups, and professional photography to document the transformation.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p>🏡 <strong>Home Renovation Proposals</strong> &nbsp;·&nbsp; Generated for Renovation-Project &nbsp;·&nbsp; 2026</p>
+  <p style="margin-top:6px;">All budget figures are indicative estimates — consult local contractors for precise quotations.</p>
+</footer>
+
+</body>
+</html>
