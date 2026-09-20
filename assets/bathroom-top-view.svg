@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <title>Bathroom top-view layout plan</title>
+  <desc>Scaled plan view of a 200 by 200 centimeter bathroom showing vanity, WC, walk-in shower, 80 centimeter door opening, and 70 centimeter privacy partition in plan.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#325e8a"/>
