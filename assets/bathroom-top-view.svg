@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Top view of 200 by 200 centimeter bathroom layout">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#325e8a"/>
@@ -37,18 +37,17 @@
   <text x="910" y="840" class="t" font-size="30" text-anchor="middle">WC</text>
 
   <!-- WC privacy glass -->
-  <rect x="760" y="730" width="36" height="329" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
+  <rect x="760" y="730" width="20" height="329" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
   <text x="742" y="1010" class="t" font-size="22" text-anchor="end">Mirror glass wall</text>
-  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm length in plan</text>
-  <text x="742" y="1066" class="t" font-size="18" text-anchor="end">Height 120 cm (elevation)</text>
+  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm in plan (panel is 120 cm high)</text>
 
   <!-- Door opening -->
-  <rect x="420" y="1035" width="300" height="35" fill="#e8be81"/>
-  <text x="570" y="1015" class="t" font-size="28" text-anchor="middle">80–90 cm DOOR OPENING</text>
+  <rect x="313" y="1035" width="381" height="35" fill="#e8be81"/>
+  <text x="503" y="1015" class="t" font-size="28" text-anchor="middle">81 cm DOOR OPENING</text>
 
   <!-- Bottom labels -->
-  <text x="225" y="1120" class="t" font-size="23" text-anchor="middle">39 cm LEFT RETURN WALL</text>
-  <text x="915" y="1120" class="t" font-size="23" text-anchor="middle">80 cm WC WALL</text>
+  <text x="221" y="1120" class="t" font-size="23" text-anchor="middle">39 cm LEFT RETURN WALL</text>
+  <text x="882" y="1120" class="t" font-size="23" text-anchor="middle">80 cm WC WALL</text>
   <text x="84" y="610" class="t" font-size="30" transform="rotate(-90 84 610)" text-anchor="middle">200 cm</text>
   <text x="600" y="84" class="t" font-size="30" text-anchor="middle">200 cm</text>
 </svg>
