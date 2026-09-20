@@ -947,8 +947,11 @@
       img.src = new URL(normalizedSrc, repoImageBase).toString();
     }
 
+    document.addEventListener('error', event => {
+      if (event.target instanceof HTMLImageElement) useRepoImageFallback(event.target);
+    }, true);
+
     document.querySelectorAll('img[src]').forEach(img => {
-      img.addEventListener('error', () => useRepoImageFallback(img));
       if (img.complete && img.naturalWidth === 0) useRepoImageFallback(img);
     });
   })();
