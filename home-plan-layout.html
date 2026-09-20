@@ -99,6 +99,29 @@
       font-size: 0.92rem;
       text-align: center;
     }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .photo-grid figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .photo-grid img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .photo-grid figcaption {
+      padding: 8px 10px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
     @media (max-width: 860px) {
       .hero, .grid { grid-template-columns: 1fr; }
     }
@@ -226,6 +249,29 @@
         <li>Use moisture-resistant mirror treatment on privacy glass panel.</li>
         <li>Add warm LED backlight for mirror and soft ambient lighting in shower area.</li>
       </ul>
+    </section>
+
+    <section class="card">
+      <h2>Current Home Photos (Workspace Files)</h2>
+      <p class="subtle">Using local repository photos so the page does not depend on external image links.</p>
+      <div class="photo-grid">
+        <figure><img src="bathroom_1.JPG" alt="Current bathroom photo" /><figcaption>Bathroom</figcaption></figure>
+        <figure><img src="kitchen.JPG" alt="Current kitchen photo" /><figcaption>Kitchen</figcaption></figure>
+        <figure><img src="kitchen_2.JPG" alt="Second current kitchen photo" /><figcaption>Kitchen 2</figcaption></figure>
+        <figure><img src="living_room.JPG" alt="Current living room photo" /><figcaption>Living Room</figcaption></figure>
+        <figure><img src="living_room_2.JPG" alt="Second current living room photo" /><figcaption>Living Room 2</figcaption></figure>
+        <figure><img src="living_room_3.JPG" alt="Third current living room photo" /><figcaption>Living Room 3</figcaption></figure>
+        <figure><img src="bedroom_1.JPG" alt="Current bedroom photo one" /><figcaption>Bedroom 1</figcaption></figure>
+        <figure><img src="bedroom_2.JPG" alt="Current bedroom photo two" /><figcaption>Bedroom 2</figcaption></figure>
+        <figure><img src="bedroom_3.JPG" alt="Current bedroom photo three" /><figcaption>Bedroom 3</figcaption></figure>
+        <figure><img src="entrance_lobby.JPG" alt="Current entrance lobby photo" /><figcaption>Entrance Lobby</figcaption></figure>
+        <figure><img src="entrance_road.JPG" alt="Current entrance road view photo" /><figcaption>Entrance Road</figcaption></figure>
+        <figure><img src="garden.JPG" alt="Current garden photo one" /><figcaption>Garden</figcaption></figure>
+        <figure><img src="garden_2.JPG" alt="Current garden photo two" /><figcaption>Garden 2</figcaption></figure>
+        <figure><img src="garden_3.JPG" alt="Current garden photo three" /><figcaption>Garden 3</figcaption></figure>
+        <figure><img src="garden_4.JPG" alt="Current garden photo four" /><figcaption>Garden 4</figcaption></figure>
+        <figure><img src="terrace.JPG" alt="Current terrace photo" /><figcaption>Terrace</figcaption></figure>
+      </div>
     </section>
 
     <p class="footer">Prepared plan page for renovation visualization and material selection.</p>
