@@ -42,8 +42,8 @@
   <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm in plan</text>
 
   <!-- Door opening -->
-  <rect x="313" y="1035" width="381" height="35" fill="#e8be81"/>
-  <text x="503" y="1015" class="t" font-size="28" text-anchor="middle">81 cm DOOR OPENING</text>
+  <rect x="313" y="1035" width="376" height="35" fill="#e8be81"/>
+  <text x="501" y="1015" class="t" font-size="28" text-anchor="middle">80 cm DOOR OPENING</text>
 
   <!-- Bottom labels -->
   <text x="221" y="1120" class="t" font-size="23" text-anchor="middle">39 cm LEFT RETURN WALL</text>
