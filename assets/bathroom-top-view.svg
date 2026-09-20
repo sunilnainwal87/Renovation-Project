@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <title>Bathroom top-view layout plan</title>
+  <desc>Scaled plan view of a 200 by 200 centimeter bathroom showing vanity, WC, walk-in shower, 80 centimeter door opening, and 70 centimeter privacy partition in plan.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#325e8a"/>
+      <stop offset="100%" stop-color="#1f3f66"/>
+    </linearGradient>
+    <style>
+      .t { font-family: Arial, sans-serif; fill: #16314d; }
+      .tl { font-family: Arial, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+  <rect x="50" y="50" width="1100" height="1100" fill="#ecf4fb"/>
+  <rect x="130" y="130" width="940" height="940" fill="url(#bg)" stroke="#1a2a3a" stroke-width="28"/>
+
+  <!-- Window wall -->
+  <rect x="430" y="130" width="340" height="40" fill="#d9ecff"/>
+  <text x="600" y="115" class="t" font-size="32" text-anchor="middle">WINDOW</text>
+
+  <!-- Vanity -->
+  <rect x="170" y="480" width="290" height="320" rx="12" fill="#d2b08e" stroke="#8a6a4f" stroke-width="8"/>
+  <rect x="205" y="535" width="180" height="190" fill="#f8fbff" stroke="#b9c8d7" stroke-width="6"/>
+  <text x="315" y="845" class="tl" font-size="30" text-anchor="middle">VANITY</text>
+
+  <!-- Shower zone -->
+  <rect x="560" y="190" width="460" height="500" fill="none" stroke="#9ac1e8" stroke-width="8" stroke-dasharray="18 12"/>
+  <text x="790" y="230" class="tl" font-size="28" text-anchor="middle">WALK-IN SHOWER</text>
+  <circle cx="1010" cy="305" r="16" fill="#d2dce7"/>
+  <text x="965" y="340" class="tl" font-size="23">Shower head</text>
+  <rect x="860" y="430" width="150" height="24" rx="8" fill="#d2dce7"/>
+  <text x="935" y="470" class="tl" font-size="23" text-anchor="middle">Seat</text>
+  <circle cx="770" cy="195" r="12" fill="#d2dce7"/>
+  <rect x="700" y="210" width="280" height="34" rx="6" fill="#12304b" opacity="0.78"/>
+  <text x="710" y="233" class="tl" font-size="21">Taps/controls on window wall</text>
+
+  <!-- WC -->
+  <rect x="820" y="710" width="180" height="260" rx="24" fill="#eef3f8" stroke="#bcc8d4" stroke-width="8"/>
+  <text x="910" y="840" class="t" font-size="30" text-anchor="middle">WC</text>
+
+  <!-- WC privacy glass -->
+  <rect x="741" y="760" width="329" height="20" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
+  <text x="742" y="1010" class="t" font-size="22" text-anchor="end">Mirror glass wall</text>
+  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm in plan</text>
+
+  <!-- Door opening -->
+  <rect x="313" y="1035" width="376" height="35" fill="#e8be81"/>
+  <text x="501" y="1015" class="t" font-size="28" text-anchor="middle">80 cm DOOR OPENING</text>
+
+  <!-- Bottom labels -->
+  <text x="221" y="1120" class="t" font-size="23" text-anchor="middle">39 cm LEFT RETURN WALL</text>
+  <text x="882" y="1120" class="t" font-size="23" text-anchor="middle">80 cm WC WALL</text>
+  <text x="84" y="610" class="t" font-size="30" transform="rotate(-90 84 610)" text-anchor="middle">200 cm</text>
+  <text x="600" y="84" class="t" font-size="30" text-anchor="middle">200 cm</text>
+</svg>

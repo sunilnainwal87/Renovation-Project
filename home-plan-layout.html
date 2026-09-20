@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Plan & Bathroom Layout</title>
+  <style>
+    :root {
+      --bg: #f3f7fc;
+      --card: #ffffff;
+      --ink: #12304b;
+      --muted: #5c7389;
+      --line: #d8e2ef;
+      --accent: #255b87;
+      --accent-soft: #e8f1fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.35rem; }
+    .subtle {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 18px;
+      box-shadow: 0 8px 24px rgba(24, 59, 93, 0.05);
+    }
+    .hero {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      display: block;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #c6dcf1;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfeff;
+    }
+    .swatch {
+      width: 100%;
+      height: 44px;
+      border-radius: 8px;
+      border: 1px solid #cad6e4;
+      margin-bottom: 10px;
+    }
+    ul { margin: 0; padding-left: 18px; }
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      background: #f4f9ff;
+      border-radius: 8px;
+      margin-top: 12px;
+      color: #284760;
+    }
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .photo-grid figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .photo-grid img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .photo-grid figcaption {
+      padding: 8px 10px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    @media (max-width: 860px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <span class="badge">Renovation Concept</span>
+      <h1>Home Plan & Bathroom Layout</h1>
+      <p class="subtle">Compact 200 × 200 cm bathroom concept with blue theme, shower seating, and WC privacy partition.</p>
+    </section>
+
+    <section class="card hero">
+      <div>
+        <h2>Top View Layout</h2>
+        <img src="assets/bathroom-top-view.svg" alt="Bathroom top-view plan." aria-describedby="bathroom-plan-desc" />
+        <p id="bathroom-plan-desc" class="subtle">Plan details: room 200 × 200 cm, left return wall 39 cm, door opening 80 cm (within 80–90 cm target), WC wall 80 cm, vanity on left, walk-in shower under window, shower head with seat on right wall, WC at lower right, and mirror-glass privacy partition with 70 cm plan length and 120 cm panel height.</p>
+      </div>
+      <div>
+        <h2>Plan Summary</h2>
+        <ul>
+          <li>Bathroom size: <strong>200 × 200 cm</strong></li>
+          <li>Door opening: <strong>80 cm</strong> (within 80–90 cm target)</li>
+          <li>Left return wall: <strong>39 cm</strong></li>
+          <li>WC wall (adjacent to door): <strong>80 cm</strong></li>
+          <li>Vanity on the left side</li>
+          <li>WC on 80 cm wall, facing shower</li>
+          <li>Walk-in shower under the window</li>
+          <li>Shower head only on right wall</li>
+          <li>Bench seat below shower head</li>
+          <li>Shower controls/taps on window wall</li>
+          <li>Mirror-finish glass privacy wall for WC: <strong>70 cm (L) × 120 cm (H)</strong></li>
+        </ul>
+        <div class="note">
+          Entry view intent: the user sees the mirror glass partition first, while direct WC sightline is blocked.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Home Plan Room Dimensions</h2>
+      <div class="grid">
+        <article class="tile-box">
+          <h3>Master Bedroom</h3>
+          <ul>
+            <li>Width: <strong>3.28 m</strong></li>
+            <li>Length: <strong>4.6 m</strong></li>
+            <li>Ceiling height: <strong>2.65 m</strong></li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <h3>Kids Room</h3>
+          <ul>
+            <li>Width: <strong>3.6 m</strong></li>
+            <li>Length: <strong>3.1 m</strong></li>
+            <li>Ceiling height: <strong>2.65 m</strong></li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <h3>Guest Room</h3>
+          <ul>
+            <li>Width: <strong>3.28 m</strong></li>
+            <li>Length: <strong>2.1 m</strong></li>
+            <li>Ceiling height: <strong>2.65 m</strong></li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <h3>Main Bathroom</h3>
+          <ul>
+            <li>Width: <strong>2 m</strong></li>
+            <li>Length: <strong>2 m</strong></li>
+            <li>Ceiling height: <strong>2.65 m</strong></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tile & Finish Choices (Blue Theme)</h2>
+      <div class="grid">
+        <article class="tile-box">
+          <div class="swatch" aria-hidden="true" style="background: linear-gradient(90deg,#1f3f66,#2a5b8d);"></div>
+          <h3>Feature Wall Tiles</h3>
+          <ul>
+            <li>Color: Deep navy blue</li>
+            <li>Finish: Satin/matte</li>
+            <li>Application: Shower zone and highlight wall</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" aria-hidden="true" style="background: linear-gradient(90deg,#7ea3c6,#9dbbda);"></div>
+          <h3>Secondary Wall Tiles</h3>
+          <ul>
+            <li>Color: Soft sky blue</li>
+            <li>Finish: Matte anti-mark</li>
+            <li>Application: Remaining walls for brighter look</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" aria-hidden="true" style="background: linear-gradient(90deg,#6c7f93,#8da2b8);"></div>
+          <h3>Floor Tiles</h3>
+          <ul>
+            <li>Color: Blue-grey stone tone</li>
+            <li>Finish: Anti-slip textured</li>
+            <li>Application: Full floor + shower floor continuity</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" aria-hidden="true" style="background: linear-gradient(90deg,#d8dee6,#f6f9fc);"></div>
+          <h3>Fittings & Glass</h3>
+          <ul>
+            <li>Fixtures: Brushed nickel/chrome</li>
+            <li>Vanity top: Light quartz or stone</li>
+            <li>Glass: Frameless shower panel + mirror privacy wall</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fixture & Utility Notes</h2>
+      <ul>
+        <li>Keep shower controls on window wall to avoid obstruction while seated.</li>
+        <li>Provide adequate elbow room around vanity and WC circulation path.</li>
+        <li>Use moisture-resistant mirror treatment on privacy glass panel.</li>
+        <li>Add warm LED backlight for mirror and soft ambient lighting in shower area.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Current Home Photos (Workspace Files)</h2>
+      <p class="subtle">Using local repository photos so the page does not depend on external image links.</p>
+      <div class="photo-grid">
+        <figure><img src="assets/photos/bathroom_1.jpg" alt="Bathroom view showing existing vanity, toilet area, and shower zone." /><figcaption>Bathroom</figcaption></figure>
+        <figure><img src="assets/photos/kitchen.jpg" alt="Kitchen view showing the current cabinetry and appliance area." /><figcaption>Kitchen</figcaption></figure>
+        <figure><img src="assets/photos/kitchen_2.jpg" alt="Second kitchen angle showing existing counter and circulation space." /><figcaption>Kitchen 2</figcaption></figure>
+        <figure><img src="assets/photos/living_room.jpg" alt="Living room view showing current seating and wall layout." /><figcaption>Living Room</figcaption></figure>
+        <figure><img src="assets/photos/living_room_2.jpg" alt="Second living room angle showing current openings and furniture zone." /><figcaption>Living Room 2</figcaption></figure>
+        <figure><img src="assets/photos/living_room_3.jpg" alt="Third living room view showing the existing interior arrangement." /><figcaption>Living Room 3</figcaption></figure>
+        <figure><img src="assets/photos/bedroom_1.jpg" alt="Bedroom 1 view showing the current wall and floor condition." /><figcaption>Bedroom 1</figcaption></figure>
+        <figure><img src="assets/photos/bedroom_2.jpg" alt="Bedroom 2 view showing current room layout and finishes." /><figcaption>Bedroom 2</figcaption></figure>
+        <figure><img src="assets/photos/bedroom_3.jpg" alt="Bedroom 3 view showing current interior condition and openings." /><figcaption>Bedroom 3</figcaption></figure>
+        <figure><img src="assets/photos/entrance_lobby.jpg" alt="Entrance lobby view showing current entry circulation and walls." /><figcaption>Entrance Lobby</figcaption></figure>
+        <figure><img src="assets/photos/entrance_road.jpg" alt="Road-side entrance view showing current exterior approach to the home." /><figcaption>Entrance Road</figcaption></figure>
+        <figure><img src="assets/photos/garden.jpg" alt="Garden view showing current landscaping and open yard area." /><figcaption>Garden</figcaption></figure>
+        <figure><img src="assets/photos/garden_2.jpg" alt="Second garden angle showing existing boundary and planting areas." /><figcaption>Garden 2</figcaption></figure>
+        <figure><img src="assets/photos/garden_3.jpg" alt="Third garden view showing current outdoor condition and depth." /><figcaption>Garden 3</figcaption></figure>
+        <figure><img src="assets/photos/garden_4.jpg" alt="Fourth garden view showing additional outdoor area and layout." /><figcaption>Garden 4</figcaption></figure>
+        <figure><img src="assets/photos/terrace.jpg" alt="Terrace view showing current paving, edges, and usable outdoor space." /><figcaption>Terrace</figcaption></figure>
+      </div>
+    </section>
+
+    <p class="footer">Prepared plan page for renovation visualization and material selection.</p>
+  </main>
+</body>
+</html>
