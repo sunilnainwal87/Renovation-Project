@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="repository-raw-base" content="https://raw.githubusercontent.com/sunilnainwal87/Renovation-Project/main/"/>
   <title>🏡 Home Renovation Proposals</title>
   <style>
     :root {
@@ -931,6 +932,59 @@
   <p style="margin-top:6px;">All budget figures are indicative estimates — consult local contractors for precise quotations.</p>
 </footer>
 <script>
+  /* ── Fallback for standalone HTML downloads ── */
+  (function () {
+    const repoImageBase = document
+      .querySelector('meta[name="repository-raw-base"]')
+      ?.getAttribute('content');
+
+    function isFallbackCandidate(src) {
+      return !!src && !/^[a-z][a-z0-9+.-]*:/i.test(src) && !/^[?#]/.test(src);
+    }
+
+    function useRepoImageFallback(img) {
+      if (img.dataset.repoFallbackApplied === 'true') {
+        console.warn('Image fallback failed to load:', img.src);
+        return;
+      }
+      const originalSrc = img.getAttribute('src');
+      if (
+        !repoImageBase ||
+        !isFallbackCandidate(originalSrc)
+      ) return;
+      const normalizedSrc = originalSrc.replace(/^\/+/, '');
+      img.dataset.repoFallbackApplied = 'true';
+      img.src = new URL(normalizedSrc, repoImageBase).toString();
+    }
+
+    function setupImageFallback(img) {
+      if (!(img instanceof HTMLImageElement) || img.dataset.repoFallbackBound === 'true') return;
+      if (!isFallbackCandidate(img.getAttribute('src'))) return;
+      img.dataset.repoFallbackBound = 'true';
+      img.addEventListener('error', () => useRepoImageFallback(img));
+      if (img.complete && img.naturalWidth === 0) useRepoImageFallback(img);
+    }
+
+    document.querySelectorAll('img[src]').forEach(setupImageFallback);
+
+    const fallbackObserver = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node instanceof HTMLImageElement) {
+            setupImageFallback(node);
+          } else if (node instanceof Element) {
+            node.querySelectorAll('img[src]').forEach(setupImageFallback);
+          }
+        });
+      });
+    });
+
+    const fallbackRoot = document.querySelector('main');
+    if (fallbackRoot) {
+      fallbackObserver.observe(fallbackRoot, { childList: true, subtree: true });
+    }
+  })();
+
   /* ── Before / After comparison sliders ── */
   (function () {
     let activeWrap = null;
