@@ -942,8 +942,9 @@
       if (img.dataset.repoFallbackApplied === 'true') return;
       const originalSrc = img.getAttribute('src');
       if (!repoImageBase || !originalSrc || /^(https?:|data:|blob:)/i.test(originalSrc)) return;
+      const normalizedSrc = originalSrc.replace(/^\/+/, '');
       img.dataset.repoFallbackApplied = 'true';
-      img.src = new URL(originalSrc, repoImageBase).toString();
+      img.src = new URL(normalizedSrc, repoImageBase).toString();
     }
 
     document.querySelectorAll('img[src]').forEach(img => {
