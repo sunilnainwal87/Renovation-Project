@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="planTitle planDesc">
-  <title id="planTitle">Bathroom top view plan</title>
-  <desc id="planDesc">Plan of a 200 by 200 centimeter bathroom with 39 centimeter left return wall, 81 centimeter door opening, 80 centimeter WC wall, vanity on the left, walk-in shower under window, and WC privacy glass partition.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#325e8a"/>
@@ -41,7 +39,7 @@
   <!-- WC privacy glass -->
   <rect x="760" y="730" width="20" height="329" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
   <text x="742" y="1010" class="t" font-size="22" text-anchor="end">Mirror glass wall</text>
-  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm in plan (panel is 120 cm high)</text>
+  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm in plan</text>
 
   <!-- Door opening -->
   <rect x="313" y="1035" width="381" height="35" fill="#e8be81"/>
