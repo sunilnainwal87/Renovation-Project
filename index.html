@@ -939,7 +939,10 @@
       ?.getAttribute('content');
 
     function useRepoImageFallback(img) {
-      if (img.dataset.repoFallbackApplied === 'true') return;
+      if (img.dataset.repoFallbackApplied === 'true') {
+        console.warn('Image fallback failed to load:', img.src);
+        return;
+      }
       const originalSrc = img.getAttribute('src');
       if (
         !repoImageBase ||
