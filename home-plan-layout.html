@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Plan & Bathroom Layout</title>
+  <style>
+    :root {
+      --bg: #f3f7fc;
+      --card: #ffffff;
+      --ink: #12304b;
+      --muted: #5c7389;
+      --line: #d8e2ef;
+      --accent: #255b87;
+      --accent-soft: #e8f1fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.35rem; }
+    .subtle {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 18px;
+      box-shadow: 0 8px 24px rgba(24, 59, 93, 0.05);
+    }
+    .hero {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      display: block;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #c6dcf1;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfeff;
+    }
+    .swatch {
+      width: 100%;
+      height: 44px;
+      border-radius: 8px;
+      border: 1px solid #cad6e4;
+      margin-bottom: 10px;
+    }
+    ul { margin: 0; padding-left: 18px; }
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      background: #f4f9ff;
+      border-radius: 8px;
+      margin-top: 12px;
+      color: #284760;
+    }
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+    @media (max-width: 860px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <span class="badge">Renovation Concept</span>
+      <h1>Home Plan & Bathroom Layout</h1>
+      <p class="subtle">Compact 200 × 200 cm bathroom concept with blue theme, shower seating, and WC privacy partition.</p>
+    </section>
+
+    <section class="card hero">
+      <div>
+        <h2>Top View Layout</h2>
+        <img src="https://github.com/user-attachments/assets/6b30bfc7-e590-4127-a6f3-c66f7fb88655" alt="Bathroom top-view layout plan" />
+      </div>
+      <div>
+        <h2>Plan Summary</h2>
+        <ul>
+          <li>Bathroom size: <strong>200 × 200 cm</strong></li>
+          <li>Door opening: <strong>80–90 cm</strong></li>
+          <li>Left return wall: <strong>39 cm</strong></li>
+          <li>WC wall (adjacent to door): <strong>80 cm</strong></li>
+          <li>Vanity on the left side</li>
+          <li>WC on 80 cm wall, facing shower</li>
+          <li>Walk-in shower under the window</li>
+          <li>Shower head only on right wall</li>
+          <li>Bench seat below shower head</li>
+          <li>Shower controls/taps on window wall</li>
+          <li>Mirror-finish glass privacy wall for WC: <strong>70 cm (L) × 120 cm (H)</strong></li>
+        </ul>
+        <div class="note">
+          Entry view intent: the user sees the mirror glass partition first, while direct WC sightline is blocked.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tile & Finish Choices (Blue Theme)</h2>
+      <div class="grid">
+        <article class="tile-box">
+          <div class="swatch" style="background: linear-gradient(90deg,#1f3f66,#2a5b8d);"></div>
+          <h3>Feature Wall Tiles</h3>
+          <ul>
+            <li>Color: Deep navy blue</li>
+            <li>Finish: Satin/matte</li>
+            <li>Application: Shower zone and highlight wall</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" style="background: linear-gradient(90deg,#7ea3c6,#9dbbda);"></div>
+          <h3>Secondary Wall Tiles</h3>
+          <ul>
+            <li>Color: Soft sky blue</li>
+            <li>Finish: Matte anti-mark</li>
+            <li>Application: Remaining walls for brighter look</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" style="background: linear-gradient(90deg,#6c7f93,#8da2b8);"></div>
+          <h3>Floor Tiles</h3>
+          <ul>
+            <li>Color: Blue-grey stone tone</li>
+            <li>Finish: Anti-slip textured</li>
+            <li>Application: Full floor + shower floor continuity</li>
+          </ul>
+        </article>
+        <article class="tile-box">
+          <div class="swatch" style="background: linear-gradient(90deg,#d8dee6,#f6f9fc);"></div>
+          <h3>Fittings & Glass</h3>
+          <ul>
+            <li>Fixtures: Brushed nickel/chrome</li>
+            <li>Vanity top: Light quartz or stone</li>
+            <li>Glass: Frameless shower panel + mirror privacy wall</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fixture & Utility Notes</h2>
+      <ul>
+        <li>Keep shower controls on window wall to avoid obstruction while seated.</li>
+        <li>Provide adequate elbow room around vanity and WC circulation path.</li>
+        <li>Use moisture-resistant mirror treatment on privacy glass panel.</li>
+        <li>Add warm LED backlight for mirror and soft ambient lighting in shower area.</li>
+      </ul>
+    </section>
+
+    <p class="footer">Prepared plan page for renovation visualization and material selection.</p>
+  </main>
+</body>
+</html>
