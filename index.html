@@ -931,6 +931,24 @@
   <p style="margin-top:6px;">All budget figures are indicative estimates — consult local contractors for precise quotations.</p>
 </footer>
 <script>
+  /* ── Fallback for standalone HTML downloads ── */
+  (function () {
+    const repoImageBase = 'https://raw.githubusercontent.com/sunilnainwal87/Renovation-Project/main/';
+
+    function useRepoImageFallback(img) {
+      if (img.dataset.repoFallbackApplied === 'true') return;
+      const originalSrc = img.getAttribute('src');
+      if (!originalSrc || /^(https?:|data:|blob:)/i.test(originalSrc)) return;
+      img.dataset.repoFallbackApplied = 'true';
+      img.src = new URL(originalSrc, repoImageBase).toString();
+    }
+
+    document.querySelectorAll('img[src]').forEach(img => {
+      img.addEventListener('error', () => useRepoImageFallback(img), { once: true });
+      if (img.complete && img.naturalWidth === 0) useRepoImageFallback(img);
+    });
+  })();
+
   /* ── Before / After comparison sliders ── */
   (function () {
     let activeWrap = null;
