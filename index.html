@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="repository-raw-base" content="https://raw.githubusercontent.com/sunilnainwal87/Renovation-Project/main/"/>
   <title>🏡 Home Renovation Proposals</title>
   <style>
     :root {
@@ -933,18 +934,20 @@
 <script>
   /* ── Fallback for standalone HTML downloads ── */
   (function () {
-    const repoImageBase = 'https://raw.githubusercontent.com/sunilnainwal87/Renovation-Project/main/';
+    const repoImageBase = document
+      .querySelector('meta[name="repository-raw-base"]')
+      ?.getAttribute('content');
 
     function useRepoImageFallback(img) {
       if (img.dataset.repoFallbackApplied === 'true') return;
       const originalSrc = img.getAttribute('src');
-      if (!originalSrc || /^(https?:|data:|blob:)/i.test(originalSrc)) return;
+      if (!repoImageBase || !originalSrc || /^(https?:|data:|blob:)/i.test(originalSrc)) return;
       img.dataset.repoFallbackApplied = 'true';
       img.src = new URL(originalSrc, repoImageBase).toString();
     }
 
     document.querySelectorAll('img[src]').forEach(img => {
-      img.addEventListener('error', () => useRepoImageFallback(img), { once: true });
+      img.addEventListener('error', () => useRepoImageFallback(img));
       if (img.complete && img.naturalWidth === 0) useRepoImageFallback(img);
     });
   })();
