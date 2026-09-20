@@ -29,16 +29,18 @@
   <rect x="860" y="430" width="150" height="24" rx="8" fill="#d2dce7"/>
   <text x="935" y="470" class="tl" font-size="23" text-anchor="middle">Seat</text>
   <circle cx="770" cy="195" r="12" fill="#d2dce7"/>
-  <text x="785" y="195" class="tl" font-size="22">Taps/controls on window wall</text>
+  <rect x="700" y="210" width="280" height="34" rx="6" fill="#12304b" opacity="0.78"/>
+  <text x="710" y="233" class="tl" font-size="21">Taps/controls on window wall</text>
 
   <!-- WC -->
   <rect x="820" y="710" width="180" height="260" rx="24" fill="#eef3f8" stroke="#bcc8d4" stroke-width="8"/>
   <text x="910" y="840" class="t" font-size="30" text-anchor="middle">WC</text>
 
   <!-- WC privacy glass -->
-  <rect x="760" y="760" width="36" height="280" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
+  <rect x="760" y="730" width="36" height="329" fill="#dbe9f9" opacity="0.7" stroke="#a3bdd7" stroke-width="4"/>
   <text x="742" y="1010" class="t" font-size="22" text-anchor="end">Mirror glass wall</text>
-  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm L × 120 cm H</text>
+  <text x="742" y="1040" class="t" font-size="20" text-anchor="end">70 cm length in plan</text>
+  <text x="742" y="1066" class="t" font-size="18" text-anchor="end">Height 120 cm (elevation)</text>
 
   <!-- Door opening -->
   <rect x="420" y="1035" width="300" height="35" fill="#e8be81"/>
