@@ -938,6 +938,10 @@
       .querySelector('meta[name="repository-raw-base"]')
       ?.getAttribute('content');
 
+    function isFallbackCandidate(src) {
+      return !!src && !/^[a-z][a-z0-9+.-]*:/i.test(src) && !/^[?#]/.test(src);
+    }
+
     function useRepoImageFallback(img) {
       if (img.dataset.repoFallbackApplied === 'true') {
         console.warn('Image fallback failed to load:', img.src);
@@ -946,22 +950,34 @@
       const originalSrc = img.getAttribute('src');
       if (
         !repoImageBase ||
-        !originalSrc ||
-        /^[a-z][a-z0-9+.-]*:/i.test(originalSrc) ||
-        /^[?#]/.test(originalSrc)
+        !isFallbackCandidate(originalSrc)
       ) return;
       const normalizedSrc = originalSrc.replace(/^\/+/, '');
       img.dataset.repoFallbackApplied = 'true';
       img.src = new URL(normalizedSrc, repoImageBase).toString();
     }
 
-    document.addEventListener('error', event => {
-      if (event.target instanceof HTMLImageElement) useRepoImageFallback(event.target);
-    }, true);
-
-    document.querySelectorAll('img[src]').forEach(img => {
+    function setupImageFallback(img) {
+      if (!(img instanceof HTMLImageElement) || img.dataset.repoFallbackBound === 'true') return;
+      if (!isFallbackCandidate(img.getAttribute('src'))) return;
+      img.dataset.repoFallbackBound = 'true';
+      img.addEventListener('error', () => useRepoImageFallback(img));
       if (img.complete && img.naturalWidth === 0) useRepoImageFallback(img);
-    });
+    }
+
+    document.querySelectorAll('img[src]').forEach(setupImageFallback);
+
+    new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node instanceof HTMLImageElement) {
+            setupImageFallback(node);
+          } else if (node instanceof Element) {
+            node.querySelectorAll('img[src]').forEach(setupImageFallback);
+          }
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
   })();
 
   /* ── Before / After comparison sliders ── */
